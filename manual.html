@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AnnealX User Manual · readark</title>
+<meta name="description" content="Full user manual for the AnnealX 3D-print annealer by readark. Quick start, every screen explained, all 14 material profiles, custom recipes, settings and safety." />
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<!-- ════════════════════════ NAV ════════════════════════ -->
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="index.html" aria-label="AnnealX by readark — home">
+      <img class="readark-mark" src="assets/img/readark-black.png" alt="readark" />
+      <span class="nav__brand-sep"></span>
+      <img class="annealx-mark" src="assets/img/annealx-wordmark-black.png" alt="AnnealX" />
+    </a>
+    <nav class="nav__links">
+      <a href="index.html#screen">The Device</a>
+      <a href="index.html#materials">Materials</a>
+      <a href="index.html#features">Features</a>
+      <a href="index.html#specs">Specs</a>
+      <a href="manual.html" style="color:var(--teal);">Manual</a>
+    </nav>
+    <a class="nav__cta" href="index.html#buy">Buy on Amazon</a>
+  </div>
+</header>
+
+<!-- ════════════════════════ MANUAL ════════════════════════ -->
+<div class="manual wrap">
+
+  <!-- LEFT: TOC -->
+  <aside class="manual__nav">
+    <h5>User Manual · v2.1.0</h5>
+    <a href="#s1">1 · What is this?</a>
+    <a href="#s2">2 · Quick start</a>
+    <a href="#s3">3 · The main screen</a>
+    <a href="#s4">4 · Choosing a material</a>
+    <a href="#s5">5 · Running &amp; stopping</a>
+    <a href="#s6">6 · Material reference</a>
+    <a href="#s7">7 · Custom profiles</a>
+    <a href="#s8">8 · Settings</a>
+    <a href="#s9">9 · Safety</a>
+    <a href="#s10">10 · Tips</a>
+  </aside>
+
+  <!-- RIGHT: doc -->
+  <article class="manual__doc">
+
+    <h1>AnnealX User Manual</h1>
+    <p class="lede">
+      The complete guide to operating your AnnealX 3D-print annealer.
+      Walks every screen, every button, and the science behind each of the
+      fourteen pre-loaded material recipes. Firmware version v2.1.0.
+    </p>
+
+    <!-- ───────── 1 ───────── -->
+    <h2 id="s1"><span class="num">01</span> What is this?</h2>
+    <p>
+      The AnnealX 3D-Print Annealer is a purpose-built oven that heat-treats
+      your 3D-printed parts. By slowly heating a part to a specific
+      temperature, holding it there, and then cooling it down in a controlled
+      way, the plastic's internal structure becomes stronger and more
+      heat-resistant. This process is called <strong>annealing</strong>.
+    </p>
+    <p>
+      You do not need any engineering knowledge to use it. Pick your filament
+      type, press START, and the oven does the rest. This manual walks you
+      through every screen and button.
+    </p>
+
+    <!-- ───────── 2 ───────── -->
+    <h2 id="s2"><span class="num">02</span> Quick start</h2>
+    <ol>
+      <li>Plug in the annealer and wait about 2 seconds for the main screen to appear.</li>
+      <li>Place your printed part inside the oven chamber.</li>
+      <li>Tap the <strong>Select Profile</strong> button at the bottom-left of the screen.</li>
+      <li>Choose your filament category (Household, Engineering, or Custom), then tap the material name.</li>
+      <li>You are returned to the main screen. The button now shows the material name, and the graph shows a preview of the planned temperature curve.</li>
+      <li>Tap <strong>START</strong> (bottom-right, green button). The annealing process begins.</li>
+      <li>When the process finishes (including the cool-down), a green popup says &ldquo;Profile complete.&rdquo; Your part is ready.</li>
+    </ol>
+    <div class="callout callout--ok">
+      <strong>That's it for everyday use.</strong> The sections below explain each screen in detail for when you want more control.
+    </div>
+
+    <!-- ───────── 3 ───────── -->
+    <h2 id="s3"><span class="num">03</span> The main screen</h2>
+    <p>Everything you need is on this one screen.</p>
+
+    <h3>3.1 Top bar</h3>
+    <p>
+      On the left is a gear icon that opens the <strong>Settings</strong> menu.
+      In the centre is the readark logo — tapping it opens an &ldquo;About&rdquo;
+      popup with a QR code you can scan for more information.
+    </p>
+
+    <h3>3.2 Temperature gauge (left side)</h3>
+    <p>
+      The large arc and number show the current oven temperature in degrees
+      Celsius. Below the number, a teal label shows the target temperature
+      (for example, <code>SP 90°</code>). At the very bottom, a short word
+      tells you what the oven is doing: <code>IDLE</code> (doing nothing),
+      <code>PROFILE</code> (running a recipe), <code>RAMP</code> (changing
+      temperature), or <code>HOLD</code> (maintaining temperature).
+    </p>
+    <div class="callout callout--danger">
+      <strong>Heater-on indicator.</strong> When the heater is on, a small red lightning-bolt icon blinks in the top-right corner of this panel. If you see it blinking, the oven is hot — do not open it or touch the parts inside.
+    </div>
+
+    <h3>3.3 Temperature graph (right side)</h3>
+    <p>
+      This chart has two lines: the <strong>planned</strong> temperature
+      (light teal) and the <strong>actual</strong> measured temperature
+      (amber/yellow). Before you start a profile, the planned line shows
+      what the oven will do. Once running, the amber line draws over it in
+      real time so you can see how closely the oven is tracking the plan.
+    </p>
+    <p>
+      If no profile is selected, the graph shows a rolling 60-minute history
+      of the oven temperature — useful for checking whether the oven has
+      cooled down. Tap anywhere on the graph to open a larger full-screen
+      version with more detail.
+    </p>
+
+    <h3>3.4 Bottom buttons</h3>
+    <p>
+      <strong>Select Profile</strong> (left, teal): opens the material
+      selection screens. After you pick a material, this button's label
+      changes to show the name you chose.
+    </p>
+    <p>
+      <strong>START / STOP</strong> (right, green or red): starts the
+      selected profile. While a profile is running, the button turns red and
+      reads &ldquo;STOP.&rdquo; Tapping STOP asks you to confirm before
+      cancelling — it will not cancel by accident.
+    </p>
+
+    <!-- ───────── 4 ───────── -->
+    <h2 id="s4"><span class="num">04</span> Choosing a material profile</h2>
+    <p>Tapping <strong>Select Profile</strong> opens a screen with three categories:</p>
+
+    <h3>4.1 Household</h3>
+    <p>For everyday filaments: PLA and PETG. These profiles use relatively low temperatures and finish in a few hours.</p>
+
+    <h3>4.2 Engineering</h3>
+    <p>For performance materials: PP, PA12, PA6-CF/GF, PC, PET-CF, PAHT-CF. These profiles involve multi-stage ramps and longer hold times. The list is paginated — use the arrow buttons on the right side to scroll through materials.</p>
+
+    <h3>4.3 Custom</h3>
+    <p>Profiles you have created yourself (see Section 7). You can store up to 16 custom profiles. Tap any saved profile to see its details, then tap <strong>Select</strong> to use it.</p>
+
+    <p>After you pick a material (from any category), you're taken back to the main screen with the profile loaded and ready. The graph immediately shows a preview of the planned temperature curve.</p>
+
+    <!-- ───────── 5 ───────── -->
+    <h2 id="s5"><span class="num">05</span> Running and stopping a profile</h2>
+
+    <h3>5.1 Starting</h3>
+    <p>
+      Once a profile is selected, tap START. The green button turns red
+      (&ldquo;STOP&rdquo;), the mode label changes to <code>PROFILE</code>,
+      and the amber line on the graph starts drawing.
+    </p>
+    <p>The oven works through each step automatically: it ramps to the target temperature, holds there for the required time, then moves to the next step. Most profiles end with a slow cool-down to room temperature.</p>
+
+    <h3>5.2 Stopping early</h3>
+    <p>Tap STOP at any time. A confirmation popup appears: &ldquo;Are you sure you want to cancel it?&rdquo; This prevents accidental taps from ruining a long run. If you confirm, the heater turns off and the setpoint returns to 22 °C.</p>
+
+    <h3>5.3 When is it done?</h3>
+    <p>A green popup appears saying <strong>Profile complete.</strong> The oven is safe to open once the temperature gauge shows a number close to room temperature. The graph keeps showing the completed traces so you can review how the run went.</p>
+    <div class="callout">
+      <strong>About the final cool-down.</strong> Most profiles aim to cool to 22 °C. If your room is warmer than that, the oven physically cannot reach 22 °C. In that case, the system waits up to 30 minutes and if the temperature has stabilised in the 20–40 °C range, it accepts that as &ldquo;done.&rdquo;
+    </div>
+
+    <!-- ───────── 6 ───────── -->
+    <h2 id="s6"><span class="num">06</span> Material profiles — reference</h2>
+    <p>
+      Each built-in profile is based on published research or
+      manufacturer-recommended procedures. The mini-charts below show exactly
+      what the oven does for each material.
+    </p>
+    <div class="callout">
+      <strong>Hardware rate caps.</strong> Maximum heating rate is 3.35 °C/min, maximum cooling rate is 1.89 °C/min. These are physical limits. Some source materials recommend faster rates — the firmware automatically caps these to the oven's capability. The soak temperature and hold duration remain unchanged, so the annealing result is equivalent.
+    </div>
+
+    <p style="color:var(--txt-dim);font-size:14px;">
+      <strong style="color:var(--txt);">How to read the charts:</strong>
+      amber line shows the planned thermal profile, green shaded regions are hold phases where the oven maintains a constant temperature, and the teal label marks the peak setpoint.
+    </p>
+
+    <div data-manual-materials></div>
+
+    <!-- ───────── 7 ───────── -->
+    <h2 id="s7"><span class="num">07</span> Creating your own profiles</h2>
+    <p>If your filament is not in the built-in list, you can create a custom profile.</p>
+
+    <h3>7.1 Creating a new profile</h3>
+    <ol>
+      <li>Go to <strong>Select Profile → Custom</strong>.</li>
+      <li>Tap <strong>+ New Profile</strong> at the bottom.</li>
+      <li>The builder opens. Tap the + button to add a step.</li>
+      <li>Choose <code>RAMP</code> (gradual temperature change) or <code>SET</code> (jump directly to a temperature).</li>
+      <li>Enter the numbers on the keypad: target temperature (°C), ramp rate (°C/min), and hold time (minutes). Tap OK after each.</li>
+      <li>Add more steps as needed (up to 16).</li>
+      <li>Tap <strong>Save</strong>, then give it a name.</li>
+    </ol>
+
+    <h3>7.2 Understanding RAMP vs SET</h3>
+    <p>
+      A <code>RAMP</code> step changes the temperature <em>gradually</em>. You specify how fast (°C per minute) and how long to hold once it arrives. This is what you will use almost every time.
+    </p>
+    <p>
+      A <code>SET</code> step jumps the target temperature <em>instantly</em> (the oven still takes time to get there physically). Use SET when you do not care about the ramp speed.
+    </p>
+    <div class="callout">
+      <strong>Rate limits apply.</strong> Heating cannot exceed 3.35 °C/min, cooling cannot exceed 1.89 °C/min. The keypad will reject out-of-range values with an on-screen message.
+    </div>
+
+    <h3>7.3 Editing and renaming</h3>
+    <p>From the Custom list, tap any saved profile to see its detail screen. From there you can <strong>Select</strong> it, <strong>Edit</strong> its steps (opens the builder with existing steps pre-loaded), <strong>Rename</strong> it, or <strong>Delete</strong> it (with confirmation).</p>
+
+    <!-- ───────── 8 ───────── -->
+    <h2 id="s8"><span class="num">08</span> Settings</h2>
+    <p>Tap the gear icon in the top-left corner of the main screen.</p>
+
+    <h3>8.1 Touchscreen calibration</h3>
+    <p>If the screen responds to taps in the wrong location, run this. Four crosshair targets appear one at a time in the screen corners. Tap each one and release. After the fourth, the calibration is saved automatically.</p>
+
+    <h3>8.2 WiFi</h3>
+    <p>Enter your network name (SSID) and password. After saving, the oven connects in the background. The status line at the top shows whether it connected and what IP address it received. Only 2.4 GHz networks are supported.</p>
+    <p>WiFi is optional. Its only purpose is to check for firmware updates when the oven boots. You can use the oven perfectly well without it.</p>
+
+    <h3>8.3 Firmware updates</h3>
+    <p>When WiFi is connected, the oven checks for updates automatically at startup. If a newer version is available, a popup appears asking whether to install. If you tap &ldquo;Install,&rdquo; a progress bar shows the download. Do not unplug the oven during this process. Once complete, the oven reboots with the new firmware.</p>
+    <p>If you tap &ldquo;Later,&rdquo; the prompt goes away. It will appear again next time the oven boots with WiFi connected.</p>
+
+    <h3>8.4 Restore defaults</h3>
+    <p>Resets the touchscreen calibration and controller tuning to factory values. Your saved custom profiles and WiFi credentials are kept. A confirmation popup appears before anything changes.</p>
+
+    <h3>8.5 Factory reset</h3>
+    <p>Erases <em>everything</em>: custom profiles, WiFi credentials, calibration, and controller tuning. The oven reboots as if brand new. This requires confirming twice to prevent accidents.</p>
+
+    <!-- ───────── 9 ───────── -->
+    <h2 id="s9"><span class="num">09</span> Safety</h2>
+    <div class="callout callout--danger">
+      <strong>Hot surfaces.</strong> The oven reaches temperatures up to 200 °C. Do not touch the chamber, the door, or your parts while a profile is running or shortly after it finishes. Wait until the gauge shows a temperature close to room temperature.
+    </div>
+    <ul>
+      <li>Place the oven on a flat, heat-resistant surface with enough space around it for ventilation. Do not place it on wood, plastic, or cloth surfaces.</li>
+      <li>If the screen shows <code>SENSOR ERROR</code>, the temperature sensor has failed. The heater is automatically shut off. Do not attempt to restart the profile until the sensor is repaired.</li>
+      <li>Do not unplug the oven during a firmware update. Doing so can corrupt the firmware. If this happens, the oven will need to be re-flashed via USB.</li>
+      <li>All temperature profiles in this manual are based on published sources cited in Section 6. Results depend on your specific filament, printer settings, part geometry, and infill density. Always test with a non-critical part first.</li>
+    </ul>
+    <p style="font-size:13px;color:var(--txt-dim);margin-top:24px;border-top:1px solid var(--border);padding-top:24px;">
+      <strong style="color:var(--txt-dim);">Disclaimer:</strong> The profiles included in this oven are compiled from peer-reviewed papers, manufacturer datasheets, and established community best practices. They are provided as starting points. readark does not guarantee specific mechanical outcomes for your parts. Annealing results are influenced by filament batch, print settings, part geometry, and ambient conditions. For critical or load-bearing applications, always validate results with your own testing.
+    </p>
+
+    <!-- ───────── 10 ───────── -->
+    <h2 id="s10"><span class="num">10</span> Tips and best practices</h2>
+    <ul>
+      <li>Use 100% infill for parts you plan to anneal. Lower infill can lead to sagging or warping during the heat cycle.</li>
+      <li>For thin-walled or complex parts, pack them in fine sand or salt inside the oven. This supports the part and prevents deformation.</li>
+      <li>Polycarbonate (PC) should be annealed <em>immediately</em> after printing — before it absorbs moisture. The longer you wait, the worse the results.</li>
+      <li>After an annealing run, leave the graph on screen and check how closely the amber (actual) line followed the teal (planned) line. A tight match means the oven is well-tuned.</li>
+      <li>&ldquo;Furnace-cool&rdquo; means the oven turns off and the door stays closed. The part cools slowly and naturally. This is deliberate — fast cooling can reintroduce internal stress.</li>
+    </ul>
+
+    <p style="text-align:center;margin-top:64px;font-family:var(--font-mono);font-size:12px;color:var(--txt-faint);letter-spacing:0.16em;text-transform:uppercase;">— End of User Manual —</p>
+
+  </article>
+</div>
+
+<!-- ════════════════════════ FOOTER ════════════════════════ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="assets/img/readark-black.png" alt="readark" />
+        <p>readark engineers intelligent embedded systems products and solutions.<br />Based in Tallinn, Estonia.</p>
+      </div>
+      <div class="footer__col">
+        <h5>Product</h5>
+        <a href="index.html#screen">The Device</a>
+        <a href="index.html#materials">Materials</a>
+        <a href="index.html#features">Features</a>
+        <a href="index.html#specs">Specs</a>
+      </div>
+      <div class="footer__col">
+        <h5>Support</h5>
+        <a href="manual.html">User Manual</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="mailto:support@readark.eu">support@readark.eu</a>
+        <a href="#">Firmware Releases</a>
+      </div>
+      <div class="footer__col">
+        <h5>Company</h5>
+        <a href="about.html">About readark</a>
+        <a href="legal.html">Legal</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </div>
+    <div class="footer__legal">
+      <span>© 2026 readark OÜ · Tallinn, Estonia</span>
+      <span>readark™ &amp; AnnealX™ are trademarks of readark OÜ</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script>
+/* Render mini reference curves for each material in section 6 */
+document.addEventListener("DOMContentLoaded", () => {
+  const host = document.querySelector("[data-manual-materials]");
+  if (!host || !window.ANNEALX_PROFILES) return;
+  const cats = ["Household", "Engineering", "High Performance"];
+  cats.forEach(cat => {
+    const h = document.createElement("h3");
+    h.textContent = "— " + cat + " Filaments —";
+    h.style.marginTop = "40px";
+    host.appendChild(h);
+    window.ANNEALX_PROFILES
+      .filter(p => p.category === cat)
+      .forEach(p => {
+        const wrap = document.createElement("div");
+        wrap.className = "mini-curve";
+        wrap.innerHTML =
+          `<div class="mini-curve__head">
+             <strong>${p.name}</strong>
+             <span>${p.durationLabel} &middot; peak ${p.peak} °C</span>
+           </div>
+           <svg viewBox="0 0 800 220" preserveAspectRatio="none" aria-label="${p.name} thermal profile"></svg>
+           <div style="font-size:13px;color:var(--txt-2);margin-top:10px;">${p.result}</div>
+           <div style="font-family:var(--font-mono);font-size:11px;color:var(--txt-dim);margin-top:6px;">${p.source}</div>`;
+        host.appendChild(wrap);
+        window.renderCurve(wrap.querySelector("svg"), p, {
+          width: 800, height: 220, padL: 28, padR: 12, padT: 30, padB: 12,
+        });
+      });
+  });
+});
+</script>
+</body>
+</html>

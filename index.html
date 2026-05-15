@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AnnealX — Closed-Loop Annealer for 3D-Printed Parts · readark</title>
+<meta name="description" content="A benchtop annealing oven built for 3D-printed parts. 14 pre-loaded material recipes from PLA to PEEK, closed-loop PID with feed-forward, custom profiles, and OTA firmware. Engineered in Estonia." />
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<!-- ════════════════════════ NAV ════════════════════════ -->
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="index.html" aria-label="AnnealX by readark — home">
+      <img class="readark-mark" src="assets/img/readark-black.png" alt="readark" />
+      <span class="nav__brand-sep"></span>
+      <img class="annealx-mark" src="assets/img/annealx-wordmark-black.png" alt="AnnealX" />
+    </a>
+    <nav class="nav__links">
+      <a href="#screen">The Device</a>
+      <a href="#materials">Materials</a>
+      <a href="#features">Features</a>
+      <a href="#specs">Specs</a>
+      <a href="manual.html">Manual</a>
+    </nav>
+    <a class="nav__cta" href="#buy">Buy on Amazon</a>
+  </div>
+</header>
+
+<!-- ════════════════════════ HERO ════════════════════════ -->
+<section class="hero">
+  <img class="hero__bg-wordmark" src="assets/img/annealx-wordmark-white.png" alt="" aria-hidden="true" />
+  <div class="wrap">
+    <div class="hero__grid">
+
+      <!-- LEFT: copy -->
+      <div class="hero__copy">
+        <span class="eyebrow" style="gap: 0px; line-height: 0; opacity: 0"></span>
+        <h1>
+          Anneal anything from <span class="accent">PLA</span><br />
+          to <span class="accent">PEEK</span><span class="amber-dot">.</span>
+        </h1>
+        <p class="hero__sub">AnnealX is a benchtop oven engineered for 3D-printed parts. Pick a material, press start — AnnealX tracks the recipe to within a degree, from a 2 hour PLA cycle to a 20 hour PEEK soak.</p>
+
+        <div class="hero__ctas">
+          <a class="btn btn--primary" href="#buy">Buy on Amazon <span class="arrow">→</span></a>
+          <a class="btn btn--ghost" href="#materials">Browse the material library</a>
+        </div>
+
+        <dl class="hero__strip">
+          <div>
+            <dt>Max temperature</dt>
+            <dd>200<span class="unit">°C</span></dd>
+          </div>
+          <div>
+            <dt>Pre-loaded recipes</dt>
+            <dd>12<span class="unit">materials</span></dd>
+          </div>
+          <div>
+            <dt>Heating rate</dt>
+            <dd>3.35<span class="unit">°C / min</span></dd>
+          </div>
+          <div>
+            <dt>Cooling rate</dt>
+            <dd>1.89<span class="unit">°C / min</span></dd>
+          </div>
+        </dl>
+      </div>
+
+      <!-- RIGHT: scope (real firmware screenshot) -->
+      <div class="scope scope--photo" aria-label="AnnealX touchscreen interface">
+        <div class="scope__chrome">
+          <span class="scope__chrome-dot mono">READY · IDLE</span>
+          <span class="mono">v2.1.2</span>
+        </div>
+
+        <img class="scope__photo" src="assets/img/screen-main.png" alt="AnnealX main touchscreen showing idle state at 36°C" style="border-radius: 10px" />
+
+        <div class="scope__caption">
+          <span><strong>2.8″ resistive touch · 320×240</strong></span>
+          <span>ESP32 controller</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ SCREEN SECTION ════════════════════════ -->
+<section class="section section--tight screen-section" id="screen">
+  <div class="wrap">
+    <div class="screen-section__grid">
+      <div>
+        <span class="eyebrow" style="gap: 10px; border-width: 0px; border-style: solid; padding: 0px; margin: 0px 0px 21px">The experience</span>
+        <h2>Plug in. Pick a material. Done.</h2>
+        <p style="margin-top:18px;font-size:18px;">
+          AnnealX runs the entire process from a single touchscreen. No phone, no laptop, no app, no account — and nothing to set up before the first run.
+        </p>
+        <ul>
+          <li>Out of the box: connect the cable, the screen comes up in two seconds, and every recipe is already on the device.</li>
+          <li>Three taps to start a run: Open Select Profile, pick a material, press START. The planned curve appears on the chart before you've let go of the screen.</li>
+          <li>Walk away. AnnealX handles the multi-stage ramp, the soak, and the controlled cool-down unattended. For anything from a two-hour PLA cycle to a twenty-hour PEEK run.</li>
+          <li>A clear confirmation tells you when the part is finished and the chamber is safe to open. The full run stays on the chart so you can see exactly how it went.</li>
+        </ul>
+      </div>
+
+      <!-- Larger scope variant -->
+      <div class="scope scope--photo" aria-label="AnnealX touchscreen mid-run on ULTEM 9085">
+        <div class="scope__chrome">
+          <span class="scope__chrome-dot mono">ULTEM 9085 · RUNNING</span>
+          <span class="mono">
+</span>
+        </div>
+
+        <img class="scope__photo" src="assets/img/screen-running.png" alt="AnnealX screen mid-run on a PEI / ULTEM 9085 profile, holding at 121°C with planned vs. actual curves overlaid" style="border-radius: 10px" />
+
+        <div class="scope__caption">
+          <span><strong>Planned vs. actual, every run.</strong></span>
+          <span>±1 °C steady hold</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ MATERIAL LIBRARY ════════════════════════ -->
+<section class="section" id="materials">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Material library</span>
+      <h2>Twelve profiles, drawn from the literature.</h2>
+      <p>Every recipe shipped on the device is sourced from a peer-reviewed paper, a national-lab study, or a manufacturer datasheet, and explicitly cited. Pick a material to inspect the curve and the source it's based on.</p>
+    </div>
+
+    <div class="materials__grid">
+      <!-- list -->
+      <div class="mat-list" data-mat-list aria-label="Material profile list"></div>
+
+      <!-- detail -->
+      <div class="mat-detail">
+        <div class="mat-detail__head">
+          <div class="mat-detail__name">
+            <span class="mat-detail__category" data-mat-category>Engineering</span>
+            <h3 data-mat-name>Nylon PA12 / PA12-CF</h3>
+          </div>
+          <dl class="mat-detail__stats">
+            <div>
+              <dt>Peak temp</dt>
+              <dd data-mat-peak>150<span class="u">°C</span></dd>
+            </div>
+            <div>
+              <dt>Duration</dt>
+              <dd data-mat-duration>7<span class="u">h</span></dd>
+            </div>
+            <div>
+              <dt>Steps</dt>
+              <dd data-mat-steps>2<span class="u">steps</span></dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="mat-curve">
+          <div class="axis-y" aria-hidden="true">
+            <span>0°</span><span>50°</span><span>100°</span><span>150°</span><span>200°</span>
+          </div>
+          <svg data-mat-curve viewBox="0 0 800 280" preserveAspectRatio="none" aria-label="Thermal profile curve"></svg>
+          <div class="axis-x" data-mat-xaxis aria-hidden="true"></div>
+        </div>
+
+        <div class="mat-detail__notes">
+          <div>
+            <h4>Expected result</h4>
+            <p data-mat-result>—</p>
+            <h4 style="margin-top:16px;">Why this profile</h4>
+            <p data-mat-rationale>—</p>
+          </div>
+          <div>
+            <h4>Source</h4>
+            <p class="mat-detail__source" data-mat-source>—</p>
+            <h4 style="margin-top:16px;">Legend</h4>
+            <p class="mat-detail__source">
+              <span style="color:#E8A83C;">━━</span> measured curve&nbsp;&nbsp;
+              <span style="color:#3CA656;">▮</span> hold phase&nbsp;&nbsp;
+              <span style="color:#00B4C8;">●</span> peak setpoint
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ FEATURES ════════════════════════ -->
+<section class="section section--tight" id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Why it works</span>
+      <h2>Engineered to be exact.</h2>
+      <p>Every part of AnnealX is built around one job: hitting the target temperature, then holding it.</p>
+    </div>
+
+    <div class="features__grid">
+
+      <article class="feature">
+        <span class="feature__num">01</span>
+        <h3>Hits the curve. Holds it.</h3>
+        <p>AnnealX tracks the planned thermal profile to within a degree, automatically. The planned and measured lines overlay on screen in real time — you watch the run, you don't manage it.</p>
+      </article>
+
+      <article class="feature">
+        <span class="feature__num">02</span>
+        <h3>Twelve recipes, every one cited.</h3>
+        <p>From PLA to PEEK, every pre-loaded profile traces back to a peer-reviewed paper, national-lab study, or manufacturer datasheet. No guesswork, no community folklore — just temperatures and times that have been measured.</p>
+      </article>
+
+      <article class="feature">
+        <span class="feature__num">03</span>
+        <h3>Build your own profile.</h3>
+        <p>Sixteen slots for custom recipes, each up to sixteen stages. Compose ramps and holds directly on the touchscreen. No laptop. No app. No account.</p>
+      </article>
+
+      <article class="feature">
+        <span class="feature__num">04</span>
+        <h3>Improvements arrive over the air.</h3>
+        <p>Optional WiFi lets AnnealX pull signed firmware updates as we release them. New material profiles and refinements land on the device you already own — without a cable, an app, or a subscription.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ HOW ANNEALING WORKS ════════════════════════ -->
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="science">
+      <div>
+        <span class="eyebrow">Why anneal</span>
+        <h2 style="margin-top:14px;">Stronger parts. Predictable parts.</h2>
+        <p style="margin-top:16px;">
+          A 3D-printed part is a stack of rapidly-cooled layers — full of
+          internal stress and partial crystallisation. Holding the part at
+          a controlled temperature lets the polymer chains rearrange,
+          recover, and bond across layer lines.
+        </p>
+        <p style="margin-top:14px;">
+          For semi-crystalline polymers (PLA, PEEK, PA, PPS) you can pick up
+          25–50% in tensile strength and dimensional stability up to 250 °C.
+          For amorphous polymers (PC, PEI/ULTEM) annealing relieves the stress
+          that causes parts to crack months after they leave the printer.
+        </p>
+      </div>
+
+      <div class="science__steps">
+        <div class="science__step">
+          <span class="n">1</span>
+          <span class="label">RAMP UP</span>
+          <span class="body">Heat at a controlled rate to the target temperature.</span>
+        </div>
+        <div class="science__step">
+          <span class="n">2</span>
+          <span class="label">SOAK</span>
+          <span class="body">Hold for the duration the polymer needs to relax and recrystallise.</span>
+        </div>
+        <div class="science__step">
+          <span class="n">3</span>
+          <span class="label">STAGE</span>
+          <span class="body">For two-phase profiles, step to a second target and hold again.</span>
+        </div>
+        <div class="science__step">
+          <span class="n">4</span>
+          <span class="label">FURNACE-COOL</span>
+          <span class="body">Cool slowly and uniformly so the new structure is locked in without re-introducing stress.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ SPECS ════════════════════════ -->
+<section class="section" id="specs">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Specs</span>
+      <h2>The numbers.</h2>
+    </div>
+
+    <div class="specs__grid">
+      <dl>
+        <div class="specs__row"><dt>Maximum chamber temperature</dt><dd>200 °C</dd></div>
+        <div class="specs__row"><dt>Maximum heating rate</dt><dd>3.35 °C / min</dd></div>
+        <div class="specs__row"><dt>Maximum cooling rate</dt><dd>1.89 °C / min</dd></div>
+        <div class="specs__row"><dt>Temperature accuracy</dt><dd>± 2.2 °C</dd></div>
+        <div class="specs__row"><dt>Hold control precision</dt><dd>± 1 °C</dd></div>
+        <div class="specs__row"><dt>Control loop</dt><dd>PID + MPC feed-forward, 4 Hz</dd></div>
+        <div class="specs__row"><dt>Pre-loaded profiles</dt><dd>12</dd></div>
+        <div class="specs__row"><dt>Custom profile slots</dt><dd>16 profiles × 16 steps</dd></div>
+      </dl>
+
+      <dl>
+        <div class="specs__row"><dt>Display</dt><dd>2.8″ 320 × 240 px, resistive touch</dd></div>
+        <div class="specs__row"><dt>Controller</dt><dd>ESP32</dd></div>
+        <div class="specs__row"><dt>Connectivity</dt><dd>2.4 GHz WiFi (OTA only, optional)</dd></div>
+        <div class="specs__row"><dt>Power switching</dt><dd>Zero-cross controlled triac, 1 % resolution</dd></div>
+        <div class="specs__row"><dt>Input voltage</dt><dd>220–240 V AC, 50 Hz<sup style="color:var(--txt-dim)">·EU</sup></dd></div>
+        <div class="specs__row"><dt>Power draw</dt><dd>≤ 1300 W</dd></div>
+        <div class="specs__row"><dt>External dimensions</dt><dd>TBD <sup style="color:var(--amber)">·placeholder</sup></dd></div>
+        <div class="specs__row"><dt>Weight</dt><dd>TBD <sup style="color:var(--amber)">·placeholder</sup></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ FAQ ════════════════════════ -->
+<section class="section section--tight" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Questions</span>
+      <h2>FAQ.</h2>
+    </div>
+
+    <div class="faq__list">
+      <div class="faq__item is-open">
+        <button class="faq__q" type="button">Do I need to know anything about annealing to use it? <span class="marker">+</span></button>
+        <div class="faq__a">
+          No. Choose a material category (Household, Engineering, or High-Performance), pick your filament, and press START. The device walks the recipe end-to-end including the cool-down, and tells you when it's safe to open. You only need the deeper controls if you're building a custom recipe for a filament we haven't pre-loaded.
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" type="button">Why is the maximum temperature 200 °C? <span class="marker">+</span></button>
+        <div class="faq__a">
+          200 °C covers every polymer in routine FDM use — PLA, PETG, PC, all the nylons, PET-CF, PAHT-CF, PPS, and both grades of ULTEM/PEI. Going higher requires a different chamber material and a substantially higher BOM cost; we'd rather build the best 200 °C oven on the market than a compromised 300 °C one.
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" type="button">Can I use it for PEEK? <span class="marker">+</span></button>
+        <div class="faq__a">Yes. The PEEK profile soaks at 200 °C for two hours after a controlled climb, then cools at 10 °C/h (the slow cool is what produces 25–35% crystallinity). The full cycle is about twenty hours.</div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" type="button">Does it need WiFi? <span class="marker">+</span></button>
+        <div class="faq__a">
+          No. WiFi is optional and only used to check for new firmware versions at boot. The device runs every profile, including custom ones, fully offline. No cloud account, no telemetry, no phone app required.
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" type="button">How accurate is the temperature reading? <span class="marker">+</span></button>
+        <div class="faq__a">The sensor is a K-type thermocouple, which typically has ±2.2 °C accuracy. Precision through the controller is ±1 °C across the working range during steady holds.</div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" type="button">What's in the box? <span class="marker">+</span></button>
+        <div class="faq__a">The AnnealX unit, an EU-spec power cable, and an internal rack for parts. The full user manual is available on this site </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" type="button">Where is it made? <span class="marker">+</span></button>
+        <div class="faq__a">Designed by readark. Manufactured by Elektromag Makine in Turkey.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ BUY ════════════════════════ -->
+<section class="section section--tight" id="buy">
+  <div class="wrap">
+    <div class="buy">
+      <div class="buy__price-strip">
+        <span>SHIPS FROM AMAZON</span>
+        <span>2-YEAR WARRANTY</span>
+        <span>EU 220–240 V</span>
+      </div>
+      <h2>One purpose-built oven. Every filament you'll ever print.</h2>
+      <p>Available exclusively through Amazon. Free returns within 30 days.</p>
+      <a class="buy__cta" href="#" target="_blank" rel="noopener">Buy AnnealX on Amazon</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ FOOTER ════════════════════════ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="assets/img/readark-black.png" alt="readark" />
+        <p>readark engineers intelligent embedded systems products and solutions.<br />Based in Tallinn, Estonia.</p>
+      </div>
+      <div class="footer__col">
+        <h5>Product</h5>
+        <a href="#screen">The Device</a>
+        <a href="#materials">Materials</a>
+        <a href="#features">Features</a>
+        <a href="#specs">Specs</a>
+      </div>
+      <div class="footer__col">
+        <h5>Support</h5>
+        <a href="manual.html">User Manual</a>
+        <a href="#faq">FAQ</a>
+        <a href="mailto:support@readark.eu">support@readark.eu</a>
+        <a href="#">Firmware Releases</a>
+      </div>
+      <div class="footer__col">
+        <h5>Company</h5>
+        <a href="about.html">About readark</a>
+        <a href="legal.html">Legal</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </div>
+    <div class="footer__legal">
+      <span>© 2026 readark OÜ · Tallinn, Estonia</span>
+      <span>readark™ &amp; AnnealX™ are trademarks of readark OÜ</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
