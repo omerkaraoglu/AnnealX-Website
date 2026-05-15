@@ -904,7 +904,21 @@ p  { margin: 0; color: var(--txt-2); text-wrap: pretty; }
   .manual__nav { position: static; max-height: none; border-right: 0; padding-right: 0; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
 }
 @media (max-width: 720px) {
+  :root { --nav-h: 60px; }
   .nav__links { display: none; }
+  .nav__inner { gap: 12px; padding: 0 16px; }
+  .nav__brand { gap: 8px; min-width: 0; flex: 1 1 auto; }
+  .nav__brand .readark-mark { height: 16px; }
+  .nav__brand .annealx-mark { height: 30px; margin-bottom: 3px; }
+  .nav__brand-sep { height: 20px; }
+  .nav__cta {
+    margin-left: auto;
+    padding: 8px 12px;
+    font-size: 13px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .nav__cta::after { display: none; }
   .wrap { padding: 0 20px; }
   .section { padding: 80px 0; }
   .hero { padding-top: calc(var(--nav-h) + 48px); padding-bottom: 60px; }
@@ -915,4 +929,9 @@ p  { margin: 0; color: var(--txt-2); text-wrap: pretty; }
   .mat-detail__stats { gap: 20px; }
   .science { padding: 32px; gap: 28px; }
   .buy { padding: 56px 24px; }
+}
+@media (max-width: 380px) {
+  .nav__brand .readark-mark { display: none; }
+  .nav__brand-sep { display: none; }
+  .nav__cta { padding: 8px 10px; }
 }
